@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import AddService from "../AddService/AddService";
 import Hero from "../Hero/Hero";
 import Main from "../Layout/Main";
+import ReviewPage from "../ReviewPage/ReviewPage";
 import Services from "../Services/Services";
 import SignUp from "../SignUp/SignUp";
 
@@ -21,6 +22,11 @@ import SignUp from "../SignUp/SignUp";
                 {
                     path:"/services",
                     element:<Services></Services>
+                },
+                {
+                    path:"/services/:id",
+                    element:<ReviewPage></ReviewPage>,
+                    loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
                 },
                 {
                     path:"/signup",

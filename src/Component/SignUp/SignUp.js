@@ -10,7 +10,7 @@ const SignUp = () => {
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || "/course";
+    const from = location.state?.from?.pathname || "/";
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
