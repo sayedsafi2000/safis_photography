@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Header = () => {
-    const { user,userSignOut } = useContext(AuthContext);
+    const { user, userSignOut } = useContext(AuthContext);
 
-    const handleLogout = ()=>{
+    const handleLogout = () => {
         userSignOut();
     }
     return (
@@ -25,12 +25,15 @@ const Header = () => {
                                         <Link><button onClick={handleLogout} className='btn btn-ghost'>Sign Out</button></Link>
                                     </>
                                     :
-                                    <Link>Log In</Link>
+                                    <>
+                                        <Link to="/signin">Log In</Link>
+                                        <Link to="/signup">Sign Up</Link>
+                                    </>
                             }
                         </li>
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl">Safi's Photography</Link>
+                <Link to="/" className="px-3 py-2  normal-case text-xl">Safi's Photography</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -40,11 +43,11 @@ const Header = () => {
                             user?.email ?
                                 <>
                                     <Link to="/addService">Add Service</Link>
-                                    <Link><button onClick={handleLogout} className='btn '>Sign Out</button></Link>
+                                    <Link><button onClick={handleLogout} className=' btn-ghost'>Sign Out</button></Link>
                                 </>
                                 :
                                 <>
-                                    <Link>Log In</Link>
+                                    <Link to="/signin">Log In</Link>
                                     <Link to="/signup">Sign Up</Link>
                                 </>
                         }

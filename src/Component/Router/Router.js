@@ -4,6 +4,7 @@ import Hero from "../Hero/Hero";
 import Main from "../Layout/Main";
 import ReviewPage from "../ReviewPage/ReviewPage";
 import Services from "../Services/Services";
+import SignIn from "../SignIn/SignIn";
 import SignUp from "../SignUp/SignUp";
 
     const router = createBrowserRouter([
@@ -31,6 +32,10 @@ import SignUp from "../SignUp/SignUp";
                 {
                     path:"/signup",
                     element:<SignUp></SignUp>
+                },
+                {
+                    path:"/signin",
+                    element:<SignIn></SignIn>
                 }
             ]
 
