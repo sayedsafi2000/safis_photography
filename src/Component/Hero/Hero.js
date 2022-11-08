@@ -12,7 +12,7 @@ const Hero = () => {
     return (
         <div className='w-full'>
             <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col-reverse lg:flex-row-reverse">
                     <div className='w-full lg:w-6/12 grid grid-cols-1 lg:grid-cols-3 gap-4'>
                         <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/a.jpg" alt="" />
                         <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/b.jpg" alt="" />

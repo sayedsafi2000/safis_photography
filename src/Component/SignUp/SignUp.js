@@ -63,7 +63,7 @@ const SignUp = () => {
                         <label className="block text-white text-sm font-bold mb-2" htmlFor="username">
                             Full-Name
                         </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your full Name" name='name' />
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your full Name" name='name' required />
                     </div>
 
                     <div className="mb-4">
@@ -77,19 +77,19 @@ const SignUp = () => {
                         <label className="block text-white text-sm font-bold mb-2" htmlFor="username">
                             Email
                         </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Enter your email" name='email' />
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Enter your email" name='email' required />
                     </div>
                     <div className="mb-6">
                         <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
                             Password
                         </label>
-                        <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-black mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="************" name='password' />
+                        <input className="shadow appearance-none border  rounded w-full py-2 px-3 text-black mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="************" name='password' required />
                     </div>
                     <div className="flex items-center flex-col">
                         <button className=" block btn-primary hover:btn-warning text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Sign In
                         </button>
-                        <Link to="/login" className="block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 mt-3" >
+                        <Link to="/signin" className="block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 mt-3" >
                             Already have an account?
                         </Link>
                     </div>

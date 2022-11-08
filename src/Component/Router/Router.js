@@ -30,6 +30,11 @@ import SignUp from "../SignUp/SignUp";
                     loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
                 },
                 {
+                    path:"/services/:id",
+                    element:<ReviewPage></ReviewPage>,
+                    loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                },
+                {
                     path:"/signup",
                     element:<SignUp></SignUp>
                 },

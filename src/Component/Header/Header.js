@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
@@ -33,7 +34,7 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                <Link to="/" className="px-3 py-2  normal-case text-xl">Safi's Photography</Link>
+                <Link to="/" className="px-3 py-2 btn btn-ghost  normal-case text-sm lg:text-xl">Safi's Photography</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -56,7 +57,13 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 <p className='hidden lg:inline-block font-bold'>{user?.displayName}</p>
-                <img className='w-9 h-9 rounded-full ml-5 user-display' src={user?.photoURL} alt="" />
+                {
+                    user?.photoURL ?
+                    <img className='w-9 h-9 rounded-full ml-5 user-display' src={user?.photoURL} alt="" />
+                    :
+                    <FaUser className='w-5 h-5 mr-5'></FaUser>
+                }
+                
             </div>
         </div>
     );
