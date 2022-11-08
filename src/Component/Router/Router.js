@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import AddService from "../AddService/AddService";
 import Hero from "../Hero/Hero";
 import Main from "../Layout/Main";
+import MyReviews from "../MyReviews/MyReviews";
 import ReviewPage from "../ReviewPage/ReviewPage";
 import Services from "../Services/Services";
 import SignIn from "../SignIn/SignIn";
@@ -33,6 +34,10 @@ import SignUp from "../SignUp/SignUp";
                     path:"/services/:id",
                     element:<ReviewPage></ReviewPage>,
                     loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                },
+                {
+                    path:"/my-reviews",
+                    element:<MyReviews></MyReviews>
                 },
                 {
                     path:"/signup",

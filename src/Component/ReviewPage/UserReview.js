@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { FaUser } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 
 const UserReview = () => {
-    const { title, _id, img, price } = useLoaderData();
+    const { title, _id, price } = useLoaderData();
     const { user } = useContext(AuthContext);
     const placeOrder = event => {
         event.preventDefault();
@@ -14,6 +15,7 @@ const UserReview = () => {
         const photoURL = user?.photoURL || <FaUser></FaUser>;
         const displayName = user?.displayName || "null";
         const message = form.message.value;
+        const rating = form.rating.value;
         const order = {
             service:_id,
             serviceName:title,
@@ -21,7 +23,8 @@ const UserReview = () => {
             price,
             photoURL,
             email,
-            message
+            message,
+            rating
         }
         fetch("http://localhost:5000/user-review",{
             method:"POST",
@@ -31,7 +34,11 @@ const UserReview = () => {
             body:JSON.stringify(order)
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            toast.success("Review Placed Successfully")
+            console.log(data)
+            form.reset();
+        })
         .catch(err=>console.log(err))
     }
     return (
@@ -44,6 +51,8 @@ const UserReview = () => {
                     <p className='font-bold'>Reviewer Email : <span className='text-yellow-600 font-normal'>{user?.displayName}</span></p>
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full my-5" placeholder="You can give  your review here..."></textarea>
+                <h2 className="text-xl font-bold px-2 mb-2">Rating</h2>
+                <input className='border-4 rounded-xl w-full p-2 mb-3' type="number" name='rating' placeholder='Rating - out of 5' />
                 <input className='btn btn-primary w-full ' type="submit" value="Place Your Order" />
             </form>
         </div>

@@ -8,8 +8,8 @@ const ReviewPage = () => {
     const review = useLoaderData();
     const { user } = useContext(AuthContext)
     return (
-        <div className='w-10/12 mx-auto none lg:flex lg:justify-between'>
-            <div className='w-full lg:w-4/12 border-4 p-5 bg-rose-100 rounded-md my-10'>
+        <div className='w-10/12  mx-auto none lg:flex lg:justify-between'>
+            <div className='w-full h-full lg:w-4/12 border-4 p-5 bg-rose-100 rounded-md my-10'>
                 <img className='w-9/12 mx-auto' src={review.img} alt="" />
                 <h2 className="text-3xl text-center font-bold my-3">{review.title}</h2>
                 <p className="text-lg text-justify">{review.description}</p>
@@ -32,7 +32,7 @@ const ReviewPage = () => {
                     }
                 </div>
                 <div className=''>
-                    <h2>Happy client's Reviews</h2>
+                    <h2 className='text-3xl my-5 font-extrabold border-2 p-4 shadow-lg'>Happy client's Reviews</h2>
                     <AllUsersReview></AllUsersReview>
                 </div>
             </div>

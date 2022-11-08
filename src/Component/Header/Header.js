@@ -23,6 +23,7 @@ const Header = () => {
                                 user?.email ?
                                     <>
                                         <Link to="/addService">Add Service</Link>
+                                        <Link to="/my-reviews">My Reviews</Link>
                                         <Link><button onClick={handleLogout} className='btn btn-ghost'>Sign Out</button></Link>
                                     </>
                                     :
@@ -44,6 +45,7 @@ const Header = () => {
                             user?.email ?
                                 <>
                                     <Link to="/addService">Add Service</Link>
+                                    <Link to="/my-reviews">My Reviews</Link>
                                     <Link><button onClick={handleLogout} className=' btn-ghost'>Sign Out</button></Link>
                                 </>
                                 :
@@ -59,11 +61,11 @@ const Header = () => {
                 <p className='hidden lg:inline-block font-bold'>{user?.displayName}</p>
                 {
                     user?.photoURL ?
-                    <img className='w-9 h-9 rounded-full ml-5 user-display' src={user?.photoURL} alt="" />
-                    :
-                    <FaUser className='w-5 h-5 mr-5'></FaUser>
+                        <img className='w-9 h-9 rounded-full ml-5 user-display' src={user?.photoURL} alt="" />
+                        :
+                        <FaUser className='w-5 h-5 mr-5'></FaUser>
                 }
-                
+
             </div>
         </div>
     );
