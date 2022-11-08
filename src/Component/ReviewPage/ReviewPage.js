@@ -30,6 +30,9 @@ const ReviewPage = () => {
                             </>
                     }
                 </div>
+                <div>
+                    <h2>Happy client's Reviews</h2>
+                </div>
             </div>
         </div>
     );

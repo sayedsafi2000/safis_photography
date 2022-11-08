@@ -43,8 +43,8 @@ const UserReview = () => {
                     <p className='font-bold'>Reviewer Name : <span className='text-yellow-600 font-normal'>{user?.email}</span></p>
                     <p className='font-bold'>Reviewer Email : <span className='text-yellow-600 font-normal'>{user?.displayName}</span></p>
                 </div>
-                <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="You can give  your review here..."></textarea>
-                <input className='btn btn-primary' type="submit" value="Place Your Order" />
+                <textarea name='message' className="textarea textarea-bordered h-24 w-full my-5" placeholder="You can give  your review here..."></textarea>
+                <input className='btn btn-primary w-full ' type="submit" value="Place Your Order" />
             </form>
         </div>
     );
