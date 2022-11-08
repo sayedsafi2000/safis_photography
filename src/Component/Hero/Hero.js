@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import HeroProducts from './HeroProducts';
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 const Hero = () => {
     const [products, setProduct] = useState([]);
-    
+
     useEffect(() => {
         fetch('http://localhost:5000/services-limit')
             .then(res => res.json())
@@ -14,12 +16,36 @@ const Hero = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col-reverse lg:flex-row-reverse">
                     <div className='w-full lg:w-6/12 grid grid-cols-1 lg:grid-cols-3 gap-4'>
-                        <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/a.jpg" alt="" />
-                        <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/b.jpg" alt="" />
-                        <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/c.jpg" alt="" />
-                        <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/d.jpg" alt="" />
-                        <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/e.jpg" alt="" />
-                        <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/f.jpg" alt="" />
+                        <PhotoProvider>
+                            <PhotoView src='hero/a.jpg'>
+                                <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/a.jpg" alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
+                        <PhotoProvider>
+                            <PhotoView src='hero/b.jpg'>
+                                <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/b.jpg" alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
+                        <PhotoProvider>
+                            <PhotoView src='hero/c.jpg'>
+                                <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/c.jpg" alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
+                        <PhotoProvider>
+                            <PhotoView src='hero/d.jpg'>
+                                <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/d.jpg" alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
+                        <PhotoProvider>
+                            <PhotoView src='hero/e.jpg'>
+                                <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/e.jpg" alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
+                        <PhotoProvider>
+                            <PhotoView src='hero/f.jpg'>
+                                <img className='h-[220px] w-9/12 lg:w-[200px] mx-auto' src="hero/f.jpg" alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
                     </div>
                     <div className='w-full lg:w-6/12'>
                         <h1 className="text-5xl font-bold">Hey Buddy!</h1>

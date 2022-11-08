@@ -1,18 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 const HeroProducts = ({ product }) => {
-    const {_id, title, price, description, rating ,img} = product;
+    const { _id, title, price, description, rating, img } = product;
     return (
         <div>
             <div className="card w-full bg-base-100 shadow-xl">
-                <figure><img src={img} alt="Shoes" /></figure>
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                        <img src={img} alt="Shoes" />
+                    </PhotoView>
+                </PhotoProvider>
                 <div className="card-body">
                     <h2 className="card-title">
                         {title}
-                        
+
                     </h2>
-                    <p>{description.slice(0,100)+"..."}</p>
+                    <p>{description.slice(0, 100) + "..."}</p>
                     <div className="card-actions justify-center">
                         <div className="badge badge-outline glass bg-yellow-400">Price :${price}</div>
                         <div className="badge badge-outline">Rating : {rating}/5</div>
