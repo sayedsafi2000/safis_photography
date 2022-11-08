@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ServicesCard from './ServicesCard';
 import FadeLoader from "react-spinners/ClipLoader";
+import useTitle from '../../Hooks/useTitle';
 const Services = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [services, setServices] = useState([]);
@@ -10,9 +11,9 @@ const Services = () => {
             .then(data => setServices(data))
         setIsLoading(false);
     }, [])
+    useTitle("Services")
     if (isLoading) {
         return <div className='w-full h-full mx-auto'>
-
             <FadeLoader color="#36d7b7"
                 height={63}
                 margin={9}

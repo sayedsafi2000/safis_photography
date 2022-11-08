@@ -1,11 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../Context/AuthProvider';
 import toast from 'react-hot-toast';
-import FadeLoader from "react-spinners/ClipLoader";
+import useTitle from '../../Hooks/useTitle';
+
 const SignIn = () => {
+    useTitle("Sign In")
     const navigate = useNavigate();
     const { providerLogin, signIn } = useContext(AuthContext);
     const location = useLocation();

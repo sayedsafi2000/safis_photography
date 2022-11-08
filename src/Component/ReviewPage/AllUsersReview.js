@@ -17,6 +17,7 @@ const AllUsersReview = () => {
                             <div className=' bg-rose-100 rounded-3xl w-full py-2'>
                                 <small className='font-bold  w-full ml-5'>{ar.displayName}</small>
                                 <p className='font-bold text-xs w-full ml-5'>Rating : {ar.rating}</p>
+                                <p className='font-bold text-xs w-full ml-5'>Time&Date : {ar.getFullTime}</p>
                                 <p className='ml-5 text-sm'>Review : "{ar.message}"</p>
                             </div>
                         </div>

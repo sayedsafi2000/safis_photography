@@ -8,6 +8,8 @@ import { AuthContext } from '../../Context/AuthProvider';
 const UserReview = () => {
     const { title, _id, price } = useLoaderData();
     const { user } = useContext(AuthContext);
+    const createAt = new Date().getTime();
+    const getFullTime = new Date().toLocaleString();
     const placeOrder = event => {
         event.preventDefault();
         const form = event.target;
@@ -24,7 +26,9 @@ const UserReview = () => {
             photoURL,
             email,
             message,
-            rating
+            rating,
+            createAt,
+            getFullTime
         }
         fetch("http://localhost:5000/user-review",{
             method:"POST",
@@ -52,6 +56,7 @@ const UserReview = () => {
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full my-5" placeholder="You can give  your review here..."></textarea>
                 <h2 className="text-xl font-bold px-2 mb-2">Rating</h2>
+                
                 <input className='border-4 rounded-xl w-full p-2 mb-3' type="number" name='rating' placeholder='Rating - out of 5' />
                 <input className='btn btn-primary w-full ' type="submit" value="Place Your Order" />
             </form>

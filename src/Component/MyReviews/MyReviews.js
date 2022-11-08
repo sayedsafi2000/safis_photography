@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import MyReviewsRow from './MyReviewsRow';
 
 const MyReviews = () => {
+    useTitle("My Review")
     const { user, userSignOut } = useContext(AuthContext);
     const [reviews, setOrders] = useState([]);
     useEffect(() => {
@@ -23,6 +25,7 @@ const MyReviews = () => {
                 setOrders(data)
             })
     }, [user?.email, userSignOut])
+    
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure,you want to delete this order")
         if (proceed) {

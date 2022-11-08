@@ -3,14 +3,16 @@ import HeroProducts from './HeroProducts';
 import { Link } from "react-router-dom";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../Hooks/useTitle';
 const Hero = () => {
     const [products, setProduct] = useState([]);
-
+    useTitle("Home")
     useEffect(() => {
         fetch('http://localhost:5000/services-limit')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
+    
     return (
         <div className='w-full'>
             <div className="hero min-h-screen bg-base-200">
