@@ -36,6 +36,7 @@ const AuthProvider = ({ children }) => {
     // Logout system 
     const userSignOut = () => {
         setLoading(true);
+        localStorage.removeItem("photography-token")
         return signOut(auth);
     }
     const authInfo = { user, providerLogin, userSignOut, createUser, signIn,loading,updateUserProfile };

@@ -4,13 +4,25 @@ import { AuthContext } from '../../Context/AuthProvider';
 import MyReviewsRow from './MyReviewsRow';
 
 const MyReviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, userSignOut } = useContext(AuthContext);
     const [reviews, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/user-reviews?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setOrders(data))
-    }, [user?.email])
+        fetch(`http://localhost:5000/user-reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem("photography-token")}`
+            }
+        })
+            .then(res => {
+
+                if (res.status === 401 || res.status === 403) {
+                    userSignOut();
+                }
+                return res.json()
+            })
+            .then(data => {
+                setOrders(data)
+            })
+    }, [user?.email, userSignOut])
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure,you want to delete this order")
         if (proceed) {
@@ -30,7 +42,7 @@ const MyReviews = () => {
     }
     if (reviews.length === 0) {
         return <div className='w-full text-center mt-36 '>
-            <h2 className='text-5xl font-bold'>No reviews were added</h2>
+            <h2 className='text-5xl font-bold'>Please add a review</h2>
 
         </div>
     }
