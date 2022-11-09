@@ -27,9 +27,9 @@ const ReviewPage = () => {
                     {
                         user?.email ?
                             <>
-                                <UserReview
-                           
-                                ></UserReview>
+                                <UserReview>
+                                    
+                                </UserReview>
                             </>
                             :
                             <>

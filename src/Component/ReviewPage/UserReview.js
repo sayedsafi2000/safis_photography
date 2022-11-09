@@ -61,7 +61,7 @@ const UserReview = () => {
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full my-5" placeholder="You can give  your review here..."></textarea>
                 <h2 className="text-xl font-bold px-2 mb-2">Rating</h2>
                 <input className='border-4 rounded-xl w-full p-2 mb-3' type="number" name='rating' placeholder='Rating - out of 5' />
-                <input className='btn btn-primary w-full ' type="submit" value="Place Your Order" />
+                <input className='py-3 btn-warning text-white font-bold w-full ' type="submit" value="Place Your Order" />
             </form>
         </div>
     );

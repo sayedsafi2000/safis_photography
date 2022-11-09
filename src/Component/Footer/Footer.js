@@ -6,23 +6,22 @@ const Footer = () => {
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div>
                     <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <a className="link link-hover">Wedding Photography</a>
+                    <a className="link link-hover">Megazine Photography</a>
+                    <a className="link link-hover">Marketing Photograpgy</a>
+                    <a className="link link-hover">Travelling Photography</a>
                 </div>
                 <div>
-                    <span className="footer-title">Company</span>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
+                    <span className="footer-title">Single Service</span>
+                    <a className="link link-hover">About me</a>
+                    <a className="link link-hover">Check More Service</a>
                     <a className="link link-hover">Press kit</a>
                 </div>
                 <div>
-                    <span className="footer-title">Legal</span>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <span className="footer-title">Contract</span>
+                    <a className="link link-hover">Email : safiuddin102030@gmail.com</a>
+                    <a className="link link-hover">Phone : 01870173659</a>
+                    <a className="link link-hover">location : Sylhet,Bangladesh</a>
                 </div>
             </footer>
             <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">

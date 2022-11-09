@@ -52,7 +52,7 @@ const MyReviews = () => {
     else {
         return (
             <div>
-                <div className='w-9/12 grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto'>
+                <div className='w-9/12 grid grid-cols-1 lg:grid-cols-2 gap-5 mx-auto my-16'>
                     {
                         reviews.map(review =>
                             <MyReviewsRow
