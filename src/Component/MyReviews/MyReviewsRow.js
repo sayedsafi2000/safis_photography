@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 const MyReviewsRow = ({ review, handleDelete }) => {
+
+    console.log(review)
     return (
         <div>
             <div className="card bg-yellow-100 shadow-xl">
@@ -12,9 +15,11 @@ const MyReviewsRow = ({ review, handleDelete }) => {
                     <p className='text-xl font-bold text-black'>Service :{review.serviceName}</p>
                     <p className='text-sm font-bold text-gray'>Review : {review.message}</p>
 
-                    <button className="btn gtn-primary">
-                        Update
-                    </button>
+                    <Link to={`/update/${review._id}`}>
+                        <button className="btn gtn-primary">
+                            Update
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

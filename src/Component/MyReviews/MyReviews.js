@@ -44,7 +44,7 @@ const MyReviews = () => {
         }
     }
     if (reviews.length === 0) {
-        return <div className='w-full text-center mt-36 '>
+        return <div className='w-full text-center mt-36 mb-20'>
             <h2 className='text-5xl font-bold'>Please add a review</h2>
 
         </div>

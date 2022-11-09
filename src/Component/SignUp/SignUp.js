@@ -27,9 +27,27 @@ const SignUp = () => {
                 console.log(user)
                 form.reset();
                 updateUserProfileHAndle(name, photoURL);
-                navigate(from, { replace: true });
                 toast.success("User Create Successfully")
+                const currentUser = {
+                    email: user.email
+                }
+                // get jwt token 
+
+                fetch("http://localhost:5000/jwt", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem("photography-token", data.token);
+                        navigate(from, { replace: true });
+                    });
             })
+
             .catch(error => {
                 console.log(error);
                 toast.error(error.message)
@@ -49,14 +67,31 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate(from, { replace: true });
+                const currentUser = {
+                    email: user.email
+                }
+                // get jwt token 
+
+                fetch("http://localhost:5000/jwt", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem("photography-token", data.token);
+                        navigate(from, { replace: true });
+                    });
             })
             .catch(error => {
                 console.log(error);
                 toast.error(error.message)
             })
     }
-    
+
     return (
         <div>
             <div className="max-w-xs z-10 mx-auto  mt-20">
@@ -97,7 +132,7 @@ const SignUp = () => {
                     </div>
                 </form>
                 <button onClick={handleGoogleSignin} className='btn btn-ghost text-black w-full mb-3 border-2 border-gray-700'><FaGoogle className='text-black mr-1' />  Sign in with google</button>
-                
+
             </div>
         </div>
     );

@@ -8,6 +8,8 @@ import UserReview from './UserReview';
 const ReviewPage = () => {
     useTitle("Review")
     const review = useLoaderData();
+    const id = review._id;
+    console.log(id)
     const { user } = useContext(AuthContext)
     return (
         <div className='w-10/12  mx-auto none lg:flex lg:justify-between'>
@@ -25,7 +27,9 @@ const ReviewPage = () => {
                     {
                         user?.email ?
                             <>
-                                <UserReview></UserReview>
+                                <UserReview
+                           
+                                ></UserReview>
                             </>
                             :
                             <>
@@ -35,7 +39,9 @@ const ReviewPage = () => {
                 </div>
                 <div className=''>
                     <h2 className='text-3xl my-5 font-extrabold border-2 p-4 shadow-lg'>Happy client's Reviews</h2>
-                    <AllUsersReview></AllUsersReview>
+                    <AllUsersReview 
+                    id={id}
+                    ></AllUsersReview>
                 </div>
             </div>
         </div>
