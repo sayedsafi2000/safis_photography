@@ -48,7 +48,7 @@ import Update from "../Update/Update";
                 {
                     path:"/update/:id",
                     element:<Update></Update>,
-                    loader:({params})=>fetch(`http://localhost:5000/user-reviews${params.id}`)
+                    loader:({params})=>fetch(`http://localhost:5000/user-review/${params.id}`)
                 },
                 
                 {
