@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 
-const UserReview = ({id}) => {
+const UserReview = () => {
     const { title, _id, price } = useLoaderData();
     const { user } = useContext(AuthContext);
     const createAt = new Date().getTime();

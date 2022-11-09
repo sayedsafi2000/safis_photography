@@ -15,7 +15,7 @@ const AllUsersReview = ({id}) => {
         <div>
             {
                 allReview.map(ar =>
-                    <>
+                    <div key={ar._id}>
                         <div className='w-full flex py-3 items-center '>
                             <img className='w-14 h-14 rounded-full mr-3' src={ar.photoURL} alt="" />
                             <div className=' bg-rose-100 rounded-3xl w-full py-2'>
@@ -27,7 +27,8 @@ const AllUsersReview = ({id}) => {
                                 <p className='font-bold text-[10px] w-full ml-5'>Time & Date : {ar.getFullTime}</p>
                             </div>
                         </div>
-                    </>)
+                    </div>
+                    )
             }
         </div>
     );
