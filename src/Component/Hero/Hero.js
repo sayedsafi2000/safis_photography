@@ -9,12 +9,12 @@ const Hero = () => {
     const [products, setProduct] = useState([]);
     useTitle("Home")
     useEffect(() => {
-        fetch('http://localhost:5000/services-limit')
+        fetch('https://safis-photography-server.vercel.app/services-limit')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
     const sentMessage =()=>{
-        toast.success("Sent Message Successfully,We will contract with you soon")
+        toast.success("Sent Message Successfully,We will contact with you soon")
 
     }
 
@@ -55,9 +55,9 @@ const Hero = () => {
                         </PhotoProvider>
                     </div>
                     <div className='w-full lg:w-6/12'>
-                        <h1 className="text-5xl font-bold">Hey Buddy!</h1>
+                        <h1 className="text-5xl font-bold header">Hey Buddy!</h1>
                         <p className="py-6 w-6/12">I'm Sayed Safi.</p>
-                        <p className="py-6 ">I am a professional photographer.I provide wedding photography,wild photography,Travle Photography and many more...</p>
+                        <p className="py-6 ">I am a professional photographer.I provide wedding photography,wild photography,Travel Photography and many more...</p>
                         <button className="px-5 py-3 text-lg text-white font-bold btn-primary">Hire me</button>
                     </div>
                 </div>
@@ -144,15 +144,15 @@ const Hero = () => {
                     </div>
                     <div className='w-full lg:w-7/12  rounded-lg py-5'>
                         <div>
-                            <h1 className="text-5xl font-bold">Captured Photo <br /> Overview!</h1>
+                            <h1 className="text-5xl font-bold header">Captured Photo <br /> Overview!</h1>
                             <p className="py-6 ">Here is some captured photo taken by me...</p>
-                            <h2 className="text-2xl text-yellow-600 font-bold mb-5">To Contract with me?</h2>
+                            <h2 className="text-2xl text-yellow-600 font-bold mb-5">To Contact with me?</h2>
                             <button className="px-5 mb-10 py-3 text-lg text-white font-bold btn-primary">Click here</button>
                         </div>
                     </div>
                 </div>
                 <form  className='w-8/12 mx-auto'>
-                    <label for="message" class="block  text-2xl my-10 font-bold text-gray-900 dark:text-gray-400">Have any question?? <br /> Sent me a message</label>
+                    <label for="message" class="block  text-2xl my-10 font-bold text-gray-900 dark:text-gray-400 header ">Have any question?? <br /> Sent me a message</label>
                     <div className='flex flex-col lg:flex-row'>
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">

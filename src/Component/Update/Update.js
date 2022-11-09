@@ -1,8 +1,10 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const Update = () => {
+    useTitle("Update Review");
     const user = useLoaderData();
     const {_id} = user;
     // console.log(user)
@@ -19,7 +21,7 @@ const Update = () => {
         }
         console.log(message,rating)
 
-        fetch(`http://localhost:5000/user-reviews/${_id}`,{
+        fetch(`https://safis-photography-server.vercel.app/user-reviews/${_id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"

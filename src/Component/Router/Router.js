@@ -37,18 +37,18 @@ import Update from "../Update/Update";
                 {
                     path:"/services/:id",
                     element:<ReviewPage></ReviewPage>,
-                    loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                    loader:({params})=>fetch(`https://safis-photography-server.vercel.app/services/${params.id}`)
                 },
                 {
                     path:"/user-review/:id",
                     element:<UserReview></UserReview>,
-                    loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                    loader:({params})=>fetch(`https://safis-photography-server.vercel.app/services/${params.id}`)
                 },
    
                 {
                     path:"/update/:id",
                     element:<Update></Update>,
-                    loader:({params})=>fetch(`http://localhost:5000/user-review/${params.id}`)
+                    loader:({params})=>fetch(`https://safis-photography-server.vercel.app/user-review/${params.id}`)
                 },
                 
                 {

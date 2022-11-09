@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;500;600;700;800;900&family=Pacifico&family=Rubik+Bubbles&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont,'League Spartan', sans-serif, 'Segoe UI', 'Roboto', 'Oxygen','Pacifico', 'cursive','Rubik Bubbles'
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+.code {
+ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
 }

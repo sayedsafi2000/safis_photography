@@ -18,7 +18,7 @@ const Footer = () => {
                     <a className="link link-hover">Press kit</a>
                 </div>
                 <div>
-                    <span className="footer-title">Contract</span>
+                    <span className="footer-title">Contact</span>
                     <a className="link link-hover">Email : safiuddin102030@gmail.com</a>
                     <a className="link link-hover">Phone : 01870173659</a>
                     <a className="link link-hover">location : Sylhet,Bangladesh</a>

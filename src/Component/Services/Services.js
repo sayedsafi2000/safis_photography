@@ -6,7 +6,7 @@ const Services = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://safis-photography-server.vercel.app/services")
             .then(res => res.json())
             .then(data => setServices(data))
         setIsLoading(false);
@@ -22,7 +22,7 @@ const Services = () => {
         </div>
     }
     return (
-        <div className='w-9/12 mx-auto'>
+        <div className='w-full lg:w-9/12 mx-auto'>
             <p>{isLoading}</p>
             {
                 services.map(service => <ServicesCard

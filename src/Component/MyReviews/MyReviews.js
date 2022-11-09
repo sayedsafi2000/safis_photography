@@ -9,7 +9,7 @@ const MyReviews = () => {
     const { user, userSignOut } = useContext(AuthContext);
     const [reviews, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/user-reviews?email=${user?.email}`, {
+        fetch(`https://safis-photography-server.vercel.app/user-reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("photography-token")}`
             }
@@ -29,7 +29,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure,you want to delete this order")
         if (proceed) {
-            fetch(`http://localhost:5000/user-reviews/${id}`, {
+            fetch(`https://safis-photography-server.vercel.app/user-reviews/${id}`, {
                 method: "delete"
             })
                 .then(res => res.json())

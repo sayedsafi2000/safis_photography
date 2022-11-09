@@ -20,7 +20,7 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/services">Services</Link></li>
 
-                        <li>
+                        <li className='header'>
                             {
                                 user?.email ?
                                     <>
@@ -39,13 +39,13 @@ const Header = () => {
                     </ul>
                 </div>
                     <img className='w-11 h-11 rounded-full' src="logo.jpg" alt="" /> 
-                <Link to="/" className="px-3 py-2   normal-case text-sm lg:text-xl">
+                <Link to="/" className="px-3 py-2   normal-case text-sm lg:text-xl header">
                      Safi's Photography</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                    <li><Link to="/services">Services</Link></li>
-                    <li>
+                    <li className='header'><Link to="/services">Services</Link></li>
+                    <li className='header'>
                         {
                             user?.email ?
                                 <>
@@ -60,11 +60,11 @@ const Header = () => {
                                 </>
                         }
                     </li>
-                    <li><Link to="/blog">Blog</Link></li>
+                    <li className='header'>  <Link to="/blog">Blog</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
-                <p className='hidden lg:inline-block font-bold'>{user?.displayName}</p>
+                <p className='hidden lg:inline-block font-bold header'>{user?.displayName}</p>
                 {
                     user?.photoURL ?
                         <img className='w-9 h-9 rounded-full ml-5 user-display' src={user?.photoURL} alt="" />

@@ -30,7 +30,7 @@ const UserReview = () => {
             createAt,
             getFullTime
         }
-        fetch("http://localhost:5000/user-review",{
+        fetch("https://safis-photography-server.vercel.app/user-review",{
             method:"POST",
             headers:{
                 "content-type":"application/json"

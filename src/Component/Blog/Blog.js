@@ -5,7 +5,7 @@ const Blog = () => {
     useTitle("Blog")
     return (
         <div className='h-full mb-20'>
-            <h1 className='w-11/12 lg:w-3/5 mx-auto my-8 text-2xl font-bold '>To know about Database and Backend server check down below.</h1>
+            <h1 className='w-11/12 lg:w-2/5 mx-auto my-8 text-2xl font-bold header'>To know about Database and Backend server check down below.</h1>
 
 
             <div tabIndex={0} className="w-11/12 lg:w-2/5 mx-auto collapse collapse-plus border border-base-300 bg-base-100 rounded-box mt-3">

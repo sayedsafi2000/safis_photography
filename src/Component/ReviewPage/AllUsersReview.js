@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 
 const AllUsersReview = ({id}) => {
     const [allReview, setAllReview] = useState([]);
+    // const [times, setTimes] = useState()
+
+    const createAt = new Date().getTime();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/servicereviewbyid/${id}`)
+        fetch(`https://safis-photography-server.vercel.app/servicereviewbyid/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setAllReview(data)})
-    }, [id])
+    }, [id,createAt])
     // console.log(allReview)
     return (
         <div>
